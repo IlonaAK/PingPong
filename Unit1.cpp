@@ -15,6 +15,7 @@ int numberOfBallBounces=0;
 int leftPlayerPoints=0;
 int rightPlayerPoints=0;
 
+
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
@@ -199,6 +200,7 @@ if(Application->MessageBox(
 "Czy na pewno chcesz rozpocz¹æ od nowa?", "PotwierdŸ",
 MB_YESNO | MB_ICONQUESTION) == IDYES)
 {
+Timer_ball->Enabled = true;
 ball->Top = 216;
 ball->Left = 480;
 paddleLeft->Top = 136;
@@ -213,7 +215,6 @@ ball->Visible = true;
 leftPlayerPoints = 0;
 rightPlayerPoints = 0;
 numberOfBallBounces = 0;
-Timer_ball-> Enabled = true;
 }
 }
 //---------------------------------------------------------------------------
@@ -255,4 +256,27 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+Label4->Visible = false;
+Button3->Visible = false;
+
+Timer_ball->Enabled = true;
+ball->Top = 216;
+ball->Left = 480;
+paddleLeft->Top = 136;
+paddleRight->Top = 136;
+x=5; y=5;
+Label1->Visible = false;
+Label2->Visible = false;
+Label3->Visible = false;
+Button2->Visible = false;
+Button1->Visible = false;
+ball->Visible = true;
+leftPlayerPoints = 0;
+rightPlayerPoints = 0;
+numberOfBallBounces = 0;
+}
+//---------------------------------------------------------------------------
 

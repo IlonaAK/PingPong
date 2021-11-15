@@ -1749,6 +1749,21 @@ object Form1: TForm1
     ParentFont = False
     Visible = False
   end
+  object Label4: TLabel
+    Left = 264
+    Top = 8
+    Width = 529
+    Height = 57
+    Align = alCustom
+    Alignment = taCenter
+    Caption = 'Zagrajmy w PingPonga!'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+  end
   object Button1: TButton
     Left = 392
     Top = 272
@@ -1783,6 +1798,21 @@ object Form1: TForm1
     Visible = False
     OnClick = Button2Click
   end
+  object Button3: TButton
+    Left = 416
+    Top = 344
+    Width = 161
+    Height = 57
+    Caption = 'Nowa gra'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -31
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = Button3Click
+  end
   object L_up: TTimer
     Enabled = False
     Interval = 20
@@ -1812,6 +1842,7 @@ object Form1: TForm1
     Top = 72
   end
   object Timer_ball: TTimer
+    Enabled = False
     Interval = 20
     OnTimer = Timer_ballTimer
     Left = 32

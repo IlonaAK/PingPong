@@ -76,13 +76,13 @@ void __fastcall TForm1::Timer_ballTimer(TObject *Sender)
 
         //odbijaj od górnej sciany
 
-        if(ball->Top - 5 <= background->Top) y=-y;
+        if(ball->Top <= 0) y=-y;
 
         //odbijaj od dolnej sciany
-        if(ball->Top + ball->Height + 5 >= background->Top) y=-y;
+        if(ball->Top + ball->Height >= background->Height) y=-y;
 
         //skucha gracza lewego
-        if (( ball->Left < paddleLeft->Left  &&
+        if (( ball->Left < paddleLeft->Left   &&
         (ball->Top + ball->Height / 2 < paddleLeft->Top ||
         ball->Top + ball->Height / 2 > paddleLeft->Top + paddleLeft->Height)))
         {
@@ -203,6 +203,7 @@ ball->Top = 216;
 ball->Left = 480;
 paddleLeft->Top = 136;
 paddleRight->Top = 136;
+x=5; y=5;
 Label1->Visible = false;
 Label2->Visible = false;
 Label3->Visible = false;
@@ -225,8 +226,12 @@ Label2->Visible = false;
 Label3->Visible = false;
 Button2->Visible = false;
 Button1->Visible = false;
-ball->Height = 37;
-ball->Left = 488;
+numberOfBallBounces = 0;
+ball->Top = 216;
+ball->Left = 480;
+paddleLeft->Top = 136;
+paddleRight->Top = 136;
+x=5; y=5;
 ball->Visible = true;
 Timer_ball-> Enabled = true;
 }
